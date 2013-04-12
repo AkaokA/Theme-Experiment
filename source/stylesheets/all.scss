@@ -26,35 +26,101 @@
 }
 
 html {
-	background: #000;
 }
 
 body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	line-height: 1.5;
+	color: rgba(255,255,255,0.8);
+}
+
+h1 {
+	font-size: 1.5em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#background {
+	position: absolute;
+	top: -40px;
+	bottom: -40px;
+	left: -40px;
+	right: -40px;
+
+	background: #000 url(../images/bg3.jpg) no-repeat;
+	background-size: cover;
+	-webkit-filter: blur(20px);
+}
+
+main {
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	
-	font-family: Helvetica, Arial, sans-serif;
-	color: #ccc;
+	background: rgba(0,0,0,0.5);
 }
 
 header {
 	position: absolute;
+	height: 28px;
+	left: 0;
+	right: 0;
+	padding: 0 15px;
+	z-index: 100;
+	background: rgba(0,0,0,0.5);
+	
+	nav {
+		display: none;
+		
+		li {
+			display: inline-block;
+		}
+	}
 }
 
-#content {
+.gridcontainer {
 	position: absolute;
-	top: 10px;
-	bottom: 10px;
-	left: 10px;
-	right: 10px;
+	width: 630px;
+	height: 630px;
+	top: 50%;
+	left: 50%;
+	margin-top: -325px;
+	margin-left: -325px;
+	padding: 10px;
 	background: rgba(255,255,255,0.1);
+	z-index: 0;
+	border-radius: 3px;
+/* 	border-top: 2px solid rgba(255,255,255,0.05); */
+	box-shadow: 0px 2px 10px rgba(0,0,0,0.4);
+	
+	ul {
+		font-size: 0;
+		li {
+			display: inline-block;
+			width: 200px;
+			height: 200px;
+			margin: 5px;
+			background: rgba(0,0,0,0.8);
+			transition: all 1s ease-out;
+			
+			&:hover {
+				background: rgba(255,255,255,0);
+			}
+			
+		}
+	}
 }
 
 footer {
 	position: absolute;
+	height: 18px;
+	left: 0;
+	right: 0;
 	bottom: 0;
-	padding: 10px;
+	padding: 5px 15px;
+	z-index: 100;
+	background: rgba(0,0,0,0.5);
 }
