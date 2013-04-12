@@ -25,3 +25,21 @@
   display: block;
 }
 
+html {
+	background: #000;
+}
+
+body {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	
+	font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
+	color: #ccc;
+}
+
+#content {
+	
+}
