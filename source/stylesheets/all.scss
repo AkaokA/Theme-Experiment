@@ -36,10 +36,25 @@ body {
 	left: 0;
 	right: 0;
 	
-	font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	color: #ccc;
 }
 
+header {
+	position: absolute;
+}
+
 #content {
-	
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+	background: rgba(255,255,255,0.1);
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	padding: 10px;
 }
