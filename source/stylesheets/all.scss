@@ -25,12 +25,57 @@
   display: block;
 }
 
+@font-face {
+    font-family: 'ProximaNovaRegular';
+    src: url('../fonts/proximanova-regular-webfont.eot');
+    src: url('../fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-regular-webfont.woff') format('woff'),
+         url('../fonts/proximanova-regular-webfont.ttf') format('truetype'),
+         url('../fonts/proximanova-regular-webfont.svg#ProximaNovaRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNovaRegular';
+    src: url('../fonts/proximanova-regitalic-webfont.eot');
+    src: url('../fonts/proximanova-regitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-regitalic-webfont.woff') format('woff'),
+         url('../fonts/proximanova-regitalic-webfont.ttf') format('truetype'),
+         url('../fonts/proximanova-regitalic-webfont.svg#ProximaNovaRegular') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ProximaNovaBold';
+    src: url('../fonts/proximanova-bold-webfont.eot');
+    src: url('../fonts/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-bold-webfont.woff') format('woff'),
+         url('../fonts/proximanova-bold-webfont.ttf') format('truetype'),
+         url('../fonts/proximanova-bold-webfont.svg#ProximaNovaRegular') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNovaBoldItalic';
+    src: url('../fonts/proximanova-boldit-webfont.eot');
+    src: url('../fonts/proximanova-boldit-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-boldit-webfont.woff') format('woff'),
+         url('../fonts/proximanova-boldit-webfont.ttf') format('truetype'),
+         url('../fonts/proximanova-boldit-webfont.svg#ProximaNovaRegular') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+
 html {
 	background-color: #000;
 }
 
 body {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'ProximaNovaRegular', Helvetica, Arial, sans-serif;
 	font-size: 12px;
 	line-height: 1.5;
 	color: rgba(255,255,255,0.8);
@@ -58,7 +103,7 @@ a {
 	left: 0;
 	right: 0;
 
-	background: #000 url(../images/bg4.jpg) no-repeat center center;
+	background: #000 url(../images/bg3.jpg) no-repeat center center;
 	background-size: cover;
 	/* -webkit-filter: blur(20px); */
 }
@@ -70,7 +115,10 @@ main {
 	left: 0;
 	right: 0;
 	
-	background: rgba(0,0,0,0.4);
+	background: rgba(0,0,0,0.6);
+	
+	-webkit-perspective: 2000;
+	-webkit-backface-visibility: hidden;
 }
 
 header {
@@ -100,16 +148,15 @@ header {
 #maingrid {
 	margin-left: auto;
 	margin-right: auto;
+	-webkit-transform-style: preserve-3d;
 }
 
 .gridcontainer {
-	width: 630px;
-	height: 630px;
 	padding: 10px;
 	background: rgba(255,255,255,0.2);
-	z-index: 0;
 	border-radius: 3px;
 	box-shadow: 0px 2px 10px rgba(0,0,0,0.8);
+	-webkit-backface-visibility: hidden;
 	
 	ul {
 		position: absolute;
@@ -119,10 +166,8 @@ header {
 		right: 0;	
 		font-size: 0;
 		padding: 1%;
-		
-		-webkit-perspective: 2000;
 		-webkit-backface-visibility: hidden;
-				
+						
 		li {
 			position: relative;
 			display: inline-block;
@@ -133,17 +178,18 @@ header {
 			-moz-box-sizing: border-box;
 			box-sizing: border-box;
 			
+			-webkit-backface-visibility: hidden;
 			-webkit-transform-origin: top center;			
-/* 			-webkit-animation: peek 1s ease-in-out infinite; */
-			
 
 			.img {
 				position: absolute;
 				top: 2%;
 				bottom: 2%;
 				left: 2%;
-				right: 2%;	
+				right: 2%;
+				background-size: cover;
 				
+				-webkit-backface-visibility: hidden;
 				box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
 			}
 		}
@@ -159,9 +205,15 @@ footer {
 	padding: 5px 15px;
 	z-index: 100;
 	background: rgba(0,0,0,0.5);
+	
+	li {
+		margin-right: 1em;
+		display: inline-block;
+	}
+
 }
 
-@-webkit-keyframes peek {
+@-webkit-keyframes flutter {
 	0% { 
 		-webkit-transform: rotate3d(1,0,0,0deg); 
 		animation-timing-function: ease-in;  
@@ -174,4 +226,9 @@ footer {
 		-webkit-transform: rotate3d(1,0,0,0deg);
 		animation-timing-function: ease-in;
 	}
+	100% {
+		-webkit-transform: rotate3d(1,0,0,0deg);
+		animation-timing-function: ease-in-out;
+	}
+	
 }

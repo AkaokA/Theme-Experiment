@@ -2,16 +2,18 @@
 
 var gridResize = function() {
 	var availableWidth = $(window).width();
-	var availableHeight = $(window).height() - ( $("header").height() + $("footer").height() );
+	var availableHeight = $(window).height() - 40 -( $("header").height() + $("footer").height() );
 	
 	var gridWidth;
 	var gridHeight;
-	var gridPadding = ($('#maingrid').outerWidth()/5);
+	var gridPadding;
 	
 	if ( availableHeight < availableWidth ) {
+		gridPadding = availableHeight / 10;
 		gridHeight = availableHeight - gridPadding;
 		gridWidth = gridHeight;
 	} else {
+		gridPadding = availableWidth / 10;
 		gridWidth = availableWidth - gridPadding;
 		gridHeight = gridWidth;
 	}
@@ -24,26 +26,12 @@ var gridResize = function() {
 }
 
 var flutterAnimation = function() {
-/*
-	var i, li, _i, _len, _ref;
-	
-	_ref = $('#maingrid ul li');
-	for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
-	  li = $(_ref[i]);
-	  li.css('color', 'blue');
-	  console.log(i*0.5);
-*/
-/* 	  console.log(li.css('-webkit-animation-delay')) */
-/* 	} */
 
 	var delay = 0;
 
 	for (var n = 1; n <= $('#maingrid ul li').length; n++) {
-		delay = n * 0.5 + "s";
-		$("#maingrid ul li:nth-child(" + n + ")").attr("style","-webkit-animation: peek 10s ease-in-out "+delay+" infinite", 
-		function() {
-
-		});
+		delay = n * 0.2 + "s";
+		$("#maingrid ul li:nth-child(" + n + ")").attr("style","-webkit-animation: flutter 10s ease-in-out " + delay + " infinite");
 	}
 }
 
