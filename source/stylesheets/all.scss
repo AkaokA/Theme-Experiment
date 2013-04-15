@@ -113,7 +113,7 @@ main {
 	left: 0;
 	right: 0;
 	background: rgba(0, 0, 0, 0.6);
-	transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
 	-webkit-perspective: 2000;
 	-webkit-backface-visibility: hidden; 
 }
